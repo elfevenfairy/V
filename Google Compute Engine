@@ -1,0 +1,12 @@
+import com.google.api.client.googleapis.compute.ComputeCredential;
+import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.jackson2.JacksonFactory;
+
+// ...
+
+JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
+HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+ComputeCredential credential = new ComputeCredential.Builder(httpTransport, JSON_FACTORY)
+    .build();
